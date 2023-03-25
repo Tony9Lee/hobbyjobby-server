@@ -1,20 +1,15 @@
 import mongoose from "mongoose";
 const { Schema } = mongoose;
 
-const ReviewSchema = new Schema(
+const MessageSchema = new Schema(
   {
-    gigId: {
+    ConversationId: {
       type: String,
       required: true,
     },
-    userId: {
+    UserId: {
       type: String,
       required: true,
-    },
-    star: {
-      type: Number,
-      required: true,
-      enum: [1],
     },
     desc: {
       type: String,
@@ -26,4 +21,4 @@ const ReviewSchema = new Schema(
   }
 );
 
-export default mongoose.model("Review", ReviewSchema);
+export default mongoose.model("Message", MessageSchema);
