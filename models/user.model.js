@@ -15,11 +15,19 @@ const userSchema = new Schema(
     },
     password: {
       type: String,
-      required: false,
+      required: true,
     },
     img: {
       type: String,
-      required: false, //Don't need to upload user pic
+      required: false,
+    },
+    country: {
+      type: String,
+      required: true,
+    },
+    phone: {
+      type: String,
+      required: false,
     },
     desc: {
       type: String,
