@@ -12,7 +12,6 @@ import cookieParser from "cookie-parser";
 
 const app = express();
 dotenv.config();
-
 mongoose.set("strictQuery", true); //Mongoose will throw an error if you try to query a field that doesn't exist in the DB Schema
 
 const connect = async () => {
@@ -24,6 +23,7 @@ const connect = async () => {
   }
 };
 
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
 
