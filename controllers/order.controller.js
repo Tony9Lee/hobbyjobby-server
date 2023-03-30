@@ -24,7 +24,12 @@ export const createOrder = async (req, res, next) => {
 };
 export const getOrders = async (req, res, next) => {
   try {
-    const gig = Gig.findById(req.params.gigId);
+    const orders = await Order.find({
+      ...(req.isSeller ? { sellerId: req.userId } : { buyderId: req.userId }),
+      isCompleted: true,
+    });
+
+    res.status(200).send(orders);
   } catch (err) {
     next(err);
   }
