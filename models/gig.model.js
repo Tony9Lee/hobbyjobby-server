@@ -21,7 +21,7 @@ const GigSchema = new Schema(
       default: 0,
     },
     starNumber: {
-      type: String,
+      type: Number,
       default: 0,
     },
     cat: {
