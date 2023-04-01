@@ -41,8 +41,6 @@ export const login = async (req, res, next) => {
 
     const { password, ...info } = user._doc;
     res.cookie("accessToken", token, { httpOnly: true }).status(200).send(info);
-
-    res.status(200).send(user);
   } catch (err) {
     next(err);
   }
